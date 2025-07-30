@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasalis™ - Alívio Imediato para Nariz Entupido</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1787969608801446');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id=1787969608801446&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding-top: 70px; /* Space for fixed header */
+        }
+        
+        /* Fixed Header */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 60, 114, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Header Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,215,0,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,215,0,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #FFD700;
+            opacity: 1;
+        }
+        
+        .product-image {
+            max-width: 300px;
+            margin: 40px auto;
+            opacity: 1;
+            position: relative;
+            background: #f8f9ff;
+            border: 3px dashed #ccc;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            color: #666;
+            font-size: 1.2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .product-image:hover {
+            border-color: #FFD700;
+            background: #fff;
+        }
+        
+        .product-image::after {
+            content: '📷 Clique para adicionar imagem do produto';
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1e3c72;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+        
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background: white;
+            color: #333;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .benefits h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(30, 60, 114, 0.15);
+            border: 2px solid #FFD700;
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        /* Special Offer Section */
+        .special-offer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .special-offer h2 {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .special-offer-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            color: #ccc;
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .package {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 20px;
+            padding: 40px 20px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .package:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
+        }
+        
+        .package.popular {
+            border: 3px solid #FFD700;
+            transform: scale(1.08);
+        }
+        
+        .package.popular::before {
+            content: 'MAIS VENDIDO';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1e3c72;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .package-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: #f8f9ff;
+            border: 2px dashed #ccc;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-image:hover {
+            border-color: #1e3c72;
+            background: #fff;
+        }
+        
+        .package-image::after {
+            content: '📷 Imagem do produto';
+            font-size: 0.8rem;
+        }
+        
+        .package h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .new-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        
+        .savings {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .package-cta {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        
+        .package-cta:hover {
+            background: linear-gradient(45deg, #2a5298, #1e3c72);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+        }
+        
+        /* How it Works Section */
+        .how-it-works {
+            background: white;
+            color: #333;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .how-it-works h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .testimonials h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.1);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #FFD700;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .testimonial-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .guarantee-badge {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .guarantee h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .guarantee p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: white;
+            color: #333;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .faq h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #f8f9ff;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.1);
+        }
+        
+        .faq-question {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            line-height: 1.6;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .urgency-timer {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        /* Scroll Animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-animation.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Responsiveness Updates */
+        @media (max-width: 768px) {
+            .fixed-header {
+                padding: 10px 0;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .tagline {
+                font-size: 0.9rem;
+            }
+            
+            body {
+                padding-top: 80px;
+            }
+            
+            .notification-popup {
+                left: 10px;
+                right: 10px;
+                max-width: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .benefits-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .packages-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .package.popular {
+                transform: none;
+            }
+            
+            .package:hover {
+                transform: translateY(-5px);
+            }
+            
+            .special-offer h2 {
+                font-size: 2.2rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        /* Loading Animation - Removed problematic animations */
+        .hero-content {
+            opacity: 1;
+        }
+        
+        /* Notification Popup */
+        .notification-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 999;
+            max-width: 300px;
+            transform: translateX(-150%);
+            transition: transform 0.5s ease;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .notification-popup.show {
+            transform: translateX(0);
+        }
+        
+        .notification-popup .customer-name {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .notification-popup .purchase-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .notification-popup .time-ago {
+            color: #27ae60;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        
+        .notification-popup::before {
+            content: '✅';
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .copyright {
+            color: #999;
+            font-size: 0.8rem;
+        }
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-animation.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+	.img {
+  max-width: 100%;
+  height: auto;
+}
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="header-content">
+            <div class="logo">Nasalis™</div>
+            <div class="tagline">Alívio em minutos com a solução natural</div>
+        </div>
+    </header>
+
+    <!-- Notification Popup -->
+    <div class="notification-popup" id="notification">
+        <div class="customer-name" id="customer-name">Antonio Santos</div>
+        <div class="purchase-info" id="purchase-info">acabou de comprar 2 unidades</div>
+        <div class="time-ago">há 3 minutos</div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container">
+            <h1>Nariz Entupido Não Te Deixa Dormir?</h1>
+            <p class="hero-subtitle">Alívio em minutos com Nasalis™ - A solução natural que você estava esperando!</p>
+            <img src="img1.png" class="img" alt="produto">
+            
+            <button class="cta-button" onclick="scrollToOffer(); trackPageView();">
+                QUERO RESPIRAR MELHOR AGORA!
+            </button>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits section">
+        <div class="container">
+            <h2 class="scroll-animation" style="color: white;">Por Que Milhares Escolhem Nasalis™?</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card scroll-animation">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Alívio Imediato</h3>
+                    <p>Sinta a diferença em apenas 2-3 minutos após a aplicação. Desentupa o nariz rapidamente e volte a respirar normalmente.</p>
+                </div>
+                
+                <div class="benefit-card scroll-animation">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>100% Natural</h3>
+                    <p>Fórmula natural sem químicos agressivos. Seguro para uso diário sem causar dependência ou efeitos colaterais.</p>
+                </div>
+                
+                <div class="benefit-card scroll-animation">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Ação Prolongada</h3>
+                    <p>Proteção duradoura que mantém suas vias respiratórias livres por horas, garantindo noites de sono tranquilas.</p>
+                </div>
+                
+                <div class="benefit-card scroll-animation">
+                    <div class="benefit-icon">👨‍⚕️</div>
+                    <h3>Cientificamente Testado</h3>
+                    <p>Desenvolvido com base em pesquisas científicas e testado para garantir máxima eficácia e segurança.</p>
+                </div>
+                
+                <div class="benefit-card scroll-animation">
+                    <div class="benefit-icon">💨</div>
+                    <h3>Combate Alergias</h3>
+                    <p>Reduz significativamente os sintomas de rinite alérgica, sinusite e congestão nasal crônica.</p>
+                </div>
+                
+                <div class="benefit-card scroll-animation">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Fácil Aplicação</h3>
+                    <p>Aplicação simples e prática. Leve na bolsa ou bolso e use quando precisar, em qualquer lugar.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="cta-button scroll-animation" onclick="scrollToOffer(); trackPageView();">
+                    EXPERIMENTAR NASALIS™ AGORA
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works section">
+        <div class="container">
+            <h2 class="scroll-animation">Como o Nasalis™ Funciona?</h2>
+            
+            <div class="steps">
+                <div class="step scroll-animation">
+                    <div class="step-number">1</div>
+                    <h3>Aplicação Simples</h3>
+                    <p>Aplique uma pequena quantidade de Nasalis™ na entrada das narinas com movimentos suaves.</p>
+                </div>
+                
+                <div class="step scroll-animation">
+                    <div class="step-number">2</div>
+                    <h3>Ação Imediata</h3>
+                    <p>Os ingredientes naturais começam a agir imediatamente, reduzindo a inflamação e abrindo as vias respiratórias.</p>
+                </div>
+                
+                <div class="step scroll-animation">
+                    <div class="step-number">3</div>
+                    <h3>Alívio Duradouro</h3>
+                    <p>Sinta o alívio imediato e desfrute de horas de respiração livre e confortável.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="cta-button scroll-animation" onclick="scrollToOffer(); trackPageView();">
+                    QUERO TESTAR AGORA!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="special-offer section" id="oferta-especial">
+        <div class="container">
+            <h2 class="scroll-animation">🔥 OFERTA ESPECIAL - LIMITADA! 🔥</h2>
+            <p class="special-offer-subtitle scroll-animation">Aproveite nossos pacotes promocionais com descontos imperdíveis!</p>
+            
+            <div class="packages-container">
+                <div class="package scroll-animation">
+                    <img src="1und.png" width="150" height="150"  alt="1 unidade">
+                    <h3>1 Unidade</h3>
+                    <div class="old-price">897 Mts</div>
+                    <div class="new-price">597 Mts</div>
+                    <div class="savings">Economize 300 Mts (33%)</div>
+                    <button class="package-cta" onclick="orderWhatsApp(1, 597); trackAddToCart();">
+                        ENCOMENDAR AGORA
+                    </button>
+                </div>
+                
+                <div class="package popular scroll-animation">
+                    <img src="2und.png" width="150" height="150"  alt="2 unidade">
+                    <h3>2 Unidades</h3>
+                    <div class="old-price">1.794 Mts</div>
+                    <div class="new-price">997 Mts</div>
+                    <div class="savings">Economize 797 Mts (44%)</div>
+                    <button class="package-cta" onclick="orderWhatsApp(2, 997); trackAddToCart();">
+                        ENCOMENDAR AGORA
+                    </button>
+                </div>
+                
+                <div class="package scroll-animation">
+                    <img src="3und.png" width="150" height="150"  alt="3 unidade">
+                    <h3>3 Unidades</h3>
+                    <div class="old-price">2.691 Mts</div>
+                    <div class="new-price">1.397 Mts</div>
+                    <div class="savings">Economize 1.294 Mts (48%)</div>
+                    <button class="package-cta" onclick="orderWhatsApp(3, 1397); trackAddToCart();">
+                        ENCOMENDAR AGORA
+                    </button>
+                </div>
+            </div>
+            
+            <div class="urgency-timer scroll-animation">
+                <p>⏰ Esta oferta expira em:</p>
+                <div class="timer" id="countdown">23:59:42</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="scroll-animation">O Que Nossos Clientes Dizem</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial scroll-animation">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Sofria com rinite há anos e nada funcionava. Com o Nasalis™ consegui dormir a noite inteira sem acordar por falta de ar. É incrível como algo tão simples pode mudar tanto a qualidade de vida!</p>
+                    <div class="testimonial-author">Maria Santos</div>
+                    <div class="testimonial-location">Maputo, Moçambique</div>
+                </div>
+                
+                <div class="testimonial scroll-animation">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Trabalho muito e preciso estar sempre 100%. O nariz entupido me atrapalhava nas reuniões e apresentações. Desde que uso Nasalis™ não tenho mais esse problema. Recomendo!</p>
+                    <div class="testimonial-author">João Machel</div>
+                    <div class="testimonial-location">Matola, Moçambique</div>
+                </div>
+                
+                <div class="testimonial scroll-animation">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Meu filho de 8 anos sempre teve problemas respiratórios. Com Nasalis™ ele finalmente consegue brincar e dormir tranquilo. Como mãe, estou muito grata por este produto natural e seguro.</p>
+                    <div class="testimonial-author">Ana Cossa</div>
+                    <div class="testimonial-location">Beira, Moçambique</div>
+                </div>
+                
+                <div class="testimonial scroll-animation">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Sou atleta e a respiração é fundamental para meu desempenho. Nasalis™ me deu a liberdade respiratória que eu precisava. Agora consigo treinar sem limitações!</p>
+                    <div class="testimonial-author">Carlos Mabunda</div>
+                    <div class="testimonial-location">Nampula, Moçambique</div>
+                </div>
+                
+                <div class="testimonial scroll-animation">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Estava cética no início, mas o resultado foi surpreendente! Em poucos minutos senti a diferença. Agora sempre tenho um Nasalis™ na bolsa. Produto excelente!</p>
+                    <div class="testimonial-author">Fernanda Sitoe</div>
+                    <div class="testimonial-location">Quelimane, Moçambique</div>
+                </div>
+                
+                <div class="testimonial scroll-animation">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Trabalho em ambiente com muito pó e sempre sofria com sinusite. Nasalis™ não só aliviou os sintomas como preveniu novas crises. Produto fantástico!</p>
+                    <div class="testimonial-author">Alberto Nguenha</div>
+                    <div class="testimonial-location">Tete, Moçambique</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="cta-button scroll-animation" onclick="scrollToOffer(); trackPageView();">
+                    JUNTAR-ME AOS CLIENTES SATISFEITOS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee section">
+        <div class="container">
+            <div class="guarantee-badge scroll-animation">
+                <div>30</div>
+                <small>DIAS</small>
+            </div>
+            <h2 class="scroll-animation">Garantia Total de Satisfação</h2>
+            <p class="scroll-animation">
+                Estamos tão confiantes na eficácia do Nasalis™ que oferecemos uma garantia completa de 30 dias. 
+                Se por qualquer motivo você não ficar 100% satisfeito, devolvemos todo seu dinheiro sem perguntas. 
+                Seu risco é zero!
+            </p>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="cta-button scroll-animation" onclick="scrollToOffer(); trackPageView();" style="background: white; color: #27ae60;">
+                    EXPERIMENTAR SEM RISCO
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+        <div class="container">
+            <h2 class="scroll-animation">Perguntas Frequentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Como usar o Nasalis™ corretamente?
+                    </div>
+                    <div class="faq-answer">
+                        Aplique uma pequena quantidade na entrada das narinas com o dedo limpo ou cotonete. Use 2-3 vezes ao dia ou conforme necessário. Para crianças, use metade da quantidade recomendada para adultos.
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Nasalis™ é seguro para crianças?
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Nasalis™ é formulado com ingredientes naturais e é seguro para crianças acima de 2 anos. Sempre consulte um pediatra antes de usar em crianças muito pequenas.
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Quanto tempo dura uma unidade?
+                    </div>
+                    <div class="faq-answer">
+                        Uma unidade de 20g dura aproximadamente 30-45 dias com uso regular (2-3 aplicações diárias). A duração pode variar conforme a frequência de uso individual.
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso usar se tiver outras medicações?
+                    </div>
+                    <div class="faq-answer">
+                        Nasalis™ é natural e geralmente compatível com outras medicações, mas sempre recomendamos consultar seu médico se estiver fazendo algum tratamento específico.
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Como funciona a entrega?
+                    </div>
+                    <div class="faq-answer">
+                        Entregamos em todo Moçambique! A entrega é feita em 2-5 dias úteis na região de Maputo e 5-10 dias úteis para outras províncias. Você pode pagar na entrega ou antecipadamente.
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        A garantia é real?
+                    </div>
+                    <div class="faq-answer">
+                        Absolutamente! Oferecemos 30 dias de garantia total. Se não ficar satisfeito, devolvemos 100% do seu dinheiro. Nossa reputação está construída na satisfação dos nossos clientes.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta section">
+        <div class="container">
+            <h2 class="scroll-animation">Não Deixe Para Amanhã!</h2>
+            <p class="scroll-animation">
+                Milhares de pessoas já transformaram suas vidas com Nasalis™. 
+                Pare de sofrer com nariz entupido e comece a respirar livremente hoje mesmo!
+            </p>
+            
+            <div class="urgency-timer scroll-animation">
+                <p>⚠️ ÚLTIMAS UNIDADES EM ESTOQUE!</p>
+                <p>Apenas <strong id="stock-count">47</strong> unidades restantes</p>
+            </div>
+            
+            <button class="cta-button scroll-animation" onclick="scrollToOffer(); trackPageView();" style="font-size: 1.5rem; padding: 20px 50px;">
+                GARANTIR MEU NASALIS™ AGORA!
+            </button>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                ✅ Entrega Grátis | ✅ Pagamento na Entrega | ✅ Garantia 30 Dias
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Nasalis™</strong> - Respiração Livre, Vida Melhor</p>
+            <p>Suporte: +258 84 949 6162 | Email: suporte@nasalis.co.mz</p>
+            <div class="copyright">
+                <p>&copy; 2025 Nasalis™. Todos os direitos reservados.</p>
+                <p>Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Facebook Pixel Tracking Functions
+        function trackPageView() {
+            fbq('track', 'ViewContent');
+        }
+        
+        function trackAddToCart() {
+            fbq('track', 'AddToCart');
+        }
+        
+        // WhatsApp Order Function
+        function orderWhatsApp(quantity, price) {
+            const messages = {
+                1: `Olá! Gostaria de encomendar 1 unidade do Nasalis™ por ${price} Meticais. Poderia me informar sobre o processo de entrega? Obrigado!`,
+                2: `Olá! Tenho interesse no pacote de 2 unidades do Nasalis™ por ${price} Meticais (MAIS VENDIDO). Como posso finalizar minha encomenda? Aguardo retorno!`,
+                3: `Olá! Quero aproveitar a melhor oferta: 3 unidades do Nasalis™ por ${price} Meticais. Poderia me ajudar com a encomenda? Muito obrigado!`
+            };
+            
+            const message = encodeURIComponent(messages[quantity]);
+            const whatsappURL = `https://wa.me/258849496162?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+        
+        // Smooth scroll to offer section
+        function scrollToOffer() {
+            document.getElementById('oferta-especial').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // FAQ Toggle Function
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            
+            // Open clicked answer if it wasn't already active
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+        
+        // Countdown Timer
+        function startCountdown() {
+            let timeLeft = 24 * 60 * 60 - 18; // 23:59:42
+            
+            function updateTimer() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                document.getElementById('countdown').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                timeLeft--;
+                
+                if (timeLeft < 0) {
+                    timeLeft = 24 * 60 * 60 - 1; // Reset to 23:59:59
+                }
+            }
+            
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+        
+        // Notification Popup System
+        function showNotification() {
+            const customers = [
+  { name: "Celina Muthisse", units: 2, location: "Costa do Sol" },
+  { name: "Alberto Zavale", units: 1, location: "Laulane" },
+  { name: "Joaquim Nhaca", units: 3, location: "Zimpeto" },
+  { name: "Helena Cuambe", units: 2, location: "Albasine" },
+  { name: "Sandra Mabunda", units: 2, location: "Hulene A" },
+  { name: "Sérgio Machava", units: 1, location: "Malhampsene" },
+  { name: "Nilza Mutemba", units: 2, location: "T3" },
+  { name: "Dário Nhantumbo", units: 3, location: "Liberdade" },
+  { name: "Lurdes Tembe", units: 2, location: "Fomento" },
+  { name: "Tomás Cossa", units: 1, location: "Matola Rio" },
+  { name: "Ivone Guambe", units: 2, location: "25 de Junho" },
+  { name: "Edson Bila", units: 2, location: "Benfica" },
+  { name: "Nadine Macuácua", units: 3, location: "Chiango" },
+  { name: "Lucas Mondlane", units: 2, location: "Kuwakana" },
+  { name: "Sílvia Zandamela", units: 1, location: "Jardim" },
+  { name: "Fernando Mucavele", units: 2, location: "Matola Gare" },
+  { name: "Rosa Nhampoca", units: 1, location: "Magoanine C" },
+  { name: "Custódio Massango", units: 3, location: "Intaka" },
+  { name: "Elisa Chilengue", units: 2, location: "Zona Verde" },
+  { name: "Ismael Matalana", units: 1, location: "Nkobe" }
+]
+            
+            const timeOptions = [
+  "há 1 minuto",
+  "há 2 minutos",
+  "há 3 minutos",
+  "há 4 minutos",
+  "há 5 minutos",
+  "há 6 minutos",
+  "há 7 minutos",
+  "há 8 minutos",
+  "há 9 minutos",
+  "há 10 minutos",
+  "há 11 minutos",
+  "há 12 minutos"
+];
+            
+            const customer = customers[Math.floor(Math.random() * customers.length)];
+            const timeAgo = timeOptions[Math.floor(Math.random() * timeOptions.length)];
+            
+            const notification = document.getElementById('notification');
+            const customerName = document.getElementById('customer-name');
+            const purchaseInfo = document.getElementById('purchase-info');
+            const timeElement = notification.querySelector('.time-ago');
+            
+            customerName.textContent = customer.name;
+            purchaseInfo.textContent = `de ${customer.location} comprou ${customer.units} unidade${customer.units > 1 ? 's' : ''}`;
+            timeElement.textContent = timeAgo;
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Hide after 4 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+        
+        // Show notifications every 9 seconds
+        function startNotifications() {
+            // First notification after 3 seconds
+            setTimeout(() => {
+                showNotification();
+                // Then every 9 seconds
+                setInterval(showNotification, 9000);
+            }, 3000);
+        }
+        // Stock Counter Animation
+        function animateStockCount() {
+            const stockElement = document.getElementById('stock-count');
+            let currentStock = 47;
+            
+            setInterval(() => {
+                if (Math.random() < 0.3 && currentStock > 15) { // 30% chance to decrease
+                    currentStock--;
+                    stockElement.textContent = currentStock;
+                    
+                    // Flash effect
+                    stockElement.style.color = '#FFD700';
+                    setTimeout(() => {
+                        stockElement.style.color = 'white';
+                    }, 500);
+                }
+            }, 30000); // Check every 30 seconds
+        }
+        
+        // Scroll Animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            document.querySelectorAll('.scroll-animation').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize all functions when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+            animateStockCount();
+            initScrollAnimations();
+            startNotifications();
+            
+            // Track initial page view
+            fbq('track', 'PageView');
+        });
+        
+        // Add some interactive effects
+        document.addEventListener('mousemove', function(e) {
+            const hero = document.querySelector('.hero::before');
+            if (hero && window.innerWidth > 768) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                document.querySelector('.hero').style.background = 
+                    `linear-gradient(${135 + x * 10}deg, #1e3c72 0%, #2a5298 100%)`;
+            }
+        });
+    </script>
+</body>
+</html>
