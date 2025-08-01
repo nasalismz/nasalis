@@ -48,7 +48,7 @@
             background: rgba(30, 60, 114, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 15px 0;
+            padding: 10px 0;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
@@ -1292,20 +1292,20 @@
             // Show notification
             notification.classList.add('show');
             
-            // Hide after 4 seconds
+            // Hide after 3 seconds
             setTimeout(() => {
                 notification.classList.remove('show');
-            }, 4000);
+            }, 3000);
         }
         
-        // Show notifications every 9 seconds
+        // Show notifications every 15 seconds
         function startNotifications() {
-            // First notification after 3 seconds
+            // First notification after 4 seconds
             setTimeout(() => {
                 showNotification();
-                // Then every 9 seconds
-                setInterval(showNotification, 9000);
-            }, 3000);
+                // Then every 15 seconds
+                setInterval(showNotification, 15000);
+            }, 4000);
         }
         // Stock Counter Animation
         function animateStockCount() {
